@@ -1,0 +1,14 @@
+com/input/ReactNativeFlipper.java
+ com.input.ReactNativeFlipper
+ com.input.ReactNativeFlipper$1
+ com.input.ReactNativeFlipper$2
+ com.input.ReactNativeFlipper$2$1
+com/input/MainActivity.java
+ com.input.MainActivity
+com/input/MainApplication.java
+ com.input.MainApplication
+ com.input.MainApplication$1
+com/input/BuildConfig.java
+ com.input.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
