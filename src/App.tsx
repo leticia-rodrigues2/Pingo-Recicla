@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import Login from './screens/Login';
-import Register from './screens/Register';
+import Login from "./screens/Login";
+import Register from "./screens/Register";
 
 const App = () => {
   if (false) {

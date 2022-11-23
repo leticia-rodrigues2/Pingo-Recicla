@@ -20,7 +20,7 @@ import {
 const Login = () => {
   const passwordRef = useRef<any>();
 
-  const Register = () => {};
+  const Submit = () => {};
   return (
     <Container>
       <Header>
@@ -57,7 +57,7 @@ const Login = () => {
 
         <Text
           onPress={() => {
-            Register();
+            Submit();
           }}>
           Cadastrar
         </Text>

@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
+import styled from "styled-components/native";
+import { getStatusBarHeight } from "react-native-status-bar-height";
 
 export const Container = styled.ScrollView`
   width: 100%;
@@ -18,7 +18,7 @@ export const ImageContent = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 27.33px; ;
+  margin-top: 20px; ;
 `;
 export const ImgLogo = styled.Image`
   width: 150px;
@@ -39,7 +39,7 @@ export const ContentTitle = styled.View`
 `;
 export const Title = styled.Text`
   color: #513826;
-  textalign: 'center';
+  textalign: "center";
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -56,7 +56,7 @@ export const View = styled.View`
 
 export const Text = styled.Text`
   color: #513826;
-  textalign: 'center';
+  textalign: "center";
   font-size: 16px;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -65,7 +65,7 @@ export const Text = styled.Text`
 export const Button = styled.TouchableOpacity`
   width: 80%;
   height: 45px;
-  margin-top: 20px;
+  margin-top: 40px;
   border-radius: 14px;
   align-items: center;
   justify-content: center;
@@ -76,4 +76,8 @@ export const Button = styled.TouchableOpacity`
 export const TextButton = styled.Text`
   color: #291808;
   font-weight: bold;
+`;
+export const TextErro = styled.Text`
+  color: #f72104;
+  margin-top: 7px;
 `;

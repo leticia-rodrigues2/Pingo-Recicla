@@ -1,20 +1,22 @@
-import React, {ReactElement} from 'react';
+import React, { ReactElement } from "react";
 
-import {Container, TextInput} from './styles';
+import { Container, TextInput } from "./styles";
 
 interface propsInpuit {
   icon: ReactElement | false;
   placeholder: string;
   secureTextEntry?: boolean;
   inputRef?: any;
-  returnKeyType: 'done' | 'go' | 'next' | 'search' | 'send';
+  returnKeyType: "done" | "go" | "next" | "search" | "send";
   keyboardType?:
-    | 'default'
-    | 'email-address'
-    | 'numeric'
-    | 'phone-pad'
-    | 'number-pad'
-    | 'decimal-pad';
+    | "default"
+    | "email-address"
+    | "numeric"
+    | "phone-pad"
+    | "number-pad"
+    | "decimal-pad"
+    | "name"
+    | "cpf";
   onChangeText: (text: string) => void;
   onSubmitEditing?: () => void;
 }
