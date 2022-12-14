@@ -44,7 +44,6 @@ const PagePoints = ({ navigation }) => {
         })
         .catch((erro) => {
           console.log(erro);
-          setPoints("Erro");
         });
     });
   }, []);
@@ -53,7 +52,6 @@ const PagePoints = ({ navigation }) => {
     navigation.navigate("PageTablePoints");
   };
   const Logout = () => {
-    console.log("oiii");
     return AsyncStorage.setItem("Token", "null").then(() => {
       navigation.navigate("Login");
     });
@@ -62,6 +60,7 @@ const PagePoints = ({ navigation }) => {
     <Container>
       <Header>
         <ContainerIcon onPress={Logout}>
+          <Text>Sair</Text>
           {<IconLogout fill="#050200" width={26} height={26} />}
         </ContainerIcon>
         <ImageContent>

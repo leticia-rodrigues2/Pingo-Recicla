@@ -4,12 +4,16 @@ import { getStatusBarHeight } from "react-native-status-bar-height";
 export const Container = styled.ScrollView`
   width: 100%;
   height: 100%;
-
   background-color: #fff;
 `;
 export const ContainerIcon = styled.TouchableOpacity`
   align-items: flex-end;
   background-color: transparent;
+  right: 10px;
+  margin-left: 25px;
+  top: 5px;
+  position: absolute;
+  z-index: 100;
 `;
 export const Header = styled.View`
   width: 100%;
@@ -138,4 +142,5 @@ export const TextDiscount = styled.Text`
 export const ContainerButtton = styled.TouchableOpacity`
   align-items: flex-end;
   background-color: transparent;
+  position: absolute;
 `;

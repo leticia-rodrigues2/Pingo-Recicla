@@ -24,6 +24,7 @@ import {
   ContentPoints,
   TextInitial,
   ContainerIcon,
+  Line,
 } from "./styles";
 import { AsyncStorage } from "react-native";
 
@@ -34,20 +35,23 @@ const PageTablePoints = ({ navigation }) => {
 
   const submit = () => {};
   const Logout = () => {
-    console.log("oiii");
+    return AsyncStorage.setItem("Token", "null").then(() => {
+      navigation.navigate("Login");
+    });
   };
   return (
     <Container>
       <Header>
         <ContainerIcon onPress={Logout}>
+          <Text>Sair</Text>
           {<IconLogout fill="#050200" width={26} height={26} />}
         </ContainerIcon>
         <ImageContent>
-          <ImgLogo source={require("../../assets/IMAGE2.png")} />
+          <ImgLogo source={require("../../assets/Logo.jpeg")} />
         </ImageContent>
       </Header>
       <ContentTitle>
-        <Title> Pingo Recicla</Title>
+        <Title> Descontos </Title>
       </ContentTitle>
 
       <ContentPoints>
@@ -57,41 +61,38 @@ const PageTablePoints = ({ navigation }) => {
 
       <Content>
         <ContentInfo>
-          <ImageContentPoints></ImageContentPoints>
+          <ImageContentPoints>
+            <TitlePoints> 200 </TitlePoints>
+            <TextPoints> PONTOS</TextPoints>
+          </ImageContentPoints>
           <TextContentPoints>
-            <TextInitial>Devolva a taça</TextInitial>
-            <Text>Ganhe desconto!</Text>
-
-            <TextInitial>80 PONTOS</TextInitial>
+            <Text>Ganhe desconto de : </Text>
+            <TextInitial>R$:15,00</TextInitial>
           </TextContentPoints>
         </ContentInfo>
-
+        <Line></Line>
         <ContentInfo>
-          <ImageContentPoints></ImageContentPoints>
+          <ImageContentPoints>
+            <TitlePoints> 100 </TitlePoints>
+            <TextPoints> PONTOS</TextPoints>
+          </ImageContentPoints>
           <TextContentPoints>
-            <TextInitial>Devolva a base</TextInitial>
-            <Text>Ganhe desconto!</Text>
-            <TextInitial>30 PONTOS</TextInitial>
+            <Text>Ganhe desconto de : </Text>
+            <TextInitial>R$:7,00</TextInitial>
           </TextContentPoints>
         </ContentInfo>
+        <Line></Line>
         <ContentInfo>
-          <ImageContentPoints></ImageContentPoints>
+          <ImageContentPoints>
+            <TitlePoints> 50 </TitlePoints>
+            <TextPoints> PONTOS</TextPoints>
+          </ImageContentPoints>
           <TextContentPoints>
-            <TextInitial>Devolva a caixa</TextInitial>
-            <Text>Ganhe desconto!</Text>
-            <TextInitial>10 PONTOS</TextInitial>
+            <Text>Ganhe desconto de : </Text>
+            <TextInitial>R$:3,00</TextInitial>
           </TextContentPoints>
         </ContentInfo>
       </Content>
-      <View>
-        <Button
-          onPress={() => {
-            submit();
-          }}
-        >
-          <TextButton>VER DESCONTOS</TextButton>
-        </Button>
-      </View>
     </Container>
   );
 };
