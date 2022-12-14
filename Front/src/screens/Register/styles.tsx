@@ -39,7 +39,7 @@ export const ContentTitle = styled.View`
 `;
 export const Title = styled.Text`
   color: #513826;
-  textalign: "center";
+  text-align: center;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -56,7 +56,7 @@ export const View = styled.View`
 
 export const Text = styled.Text`
   color: #513826;
-  textalign: "center";
+  text-align: center;
   font-size: 16px;
   margin-bottom: 10px;
   margin-top: 10px;

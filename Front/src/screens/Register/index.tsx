@@ -21,7 +21,7 @@ import {
   TextErro,
 } from "./styles";
 
-const Register = () => {
+const Register = ({ navigation }) => {
   const api = axios.create({
     baseURL: "http://10.0.2.2:3000",
   });
@@ -77,6 +77,8 @@ const Register = () => {
             erro.config
           );
         });
+
+      navigation.navigate("PagePoints");
     } else {
       console.log("SENHA NÃO CORRESPONDE");
       setIsPassword(true);

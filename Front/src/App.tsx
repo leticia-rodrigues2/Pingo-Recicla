@@ -1,12 +1,29 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 
 import Login from "./screens/Login";
+import PagePoints from "./screens/PagePoints";
+import PageTablePoints from "./screens/PageTablePoints";
 import Register from "./screens/Register";
 
 const App = () => {
-  if (false) {
-    return <Login />;
-  } else return <Register />;
+  const Stack = createNativeStackNavigator();
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Login"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="PagePoints" component={PagePoints} />
+        <Stack.Screen name="PageTablePoints" component={PageTablePoints} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 };
 
 export default App;

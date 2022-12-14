@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
+import styled from "styled-components/native";
+import { getStatusBarHeight } from "react-native-status-bar-height";
 
 export const Container = styled.ScrollView`
   width: 100%;
@@ -11,6 +11,12 @@ export const Header = styled.View`
   width: 100%;
   height: 10%;
   margin-bottom: 200px;
+`;
+export const TextErro = styled.Text`
+  color: #c92c05;
+  width: 100%;
+  margin-top: 5px;
+  text-align: center;
 `;
 
 export const ImageContent = styled.View`
@@ -45,7 +51,7 @@ export const View = styled.View`
 
 export const Text = styled.Text`
   color: #513826;
-  textalign: 'center';
+  text-align: center;
   font-size: 16px;
   margin-bottom: 10px;
   margin-top: 10px;
