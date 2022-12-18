@@ -45,7 +45,6 @@ const Login = ({ navigation }) => {
   };
 
   const Submit = () => {
-    I;
     api
       .post("/login", { email, senha: password })
       .then((resp) => {
@@ -54,7 +53,6 @@ const Login = ({ navigation }) => {
         setIsValid(true);
 
         return AsyncStorage.setItem("Token", resp.data.token).then(() => {
-          // DEPOIS VAMOS PARA PAGINA DE PONTOS
           navigation.navigate("PagePoints");
         });
       })
@@ -99,15 +97,6 @@ const Login = ({ navigation }) => {
         <Button onPress={Submit}>
           <TextButton>Entrar</TextButton>
         </Button>
-
-        <Text
-          onPress={() => {
-            Register();
-          }}
-        >
-          Cadastrar
-        </Text>
-        <Text onPress={() => {}}>Esqueci a senha !</Text>
       </View>
     </Container>
   );

@@ -1,16 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Input } from "../../components";
 import axios from "axios";
 import IconLogout from "../../assets/logout.svg";
 import {
   Container,
   Header,
   Content,
-  View,
   Text,
-  Button,
-  TextButton,
   ImageContent,
   ImgLogo,
   Title,
@@ -19,7 +15,6 @@ import {
   TextPoints,
   ContentInfo,
   ImageContentPoints,
-  ImgLogoPoint,
   TextContentPoints,
   ContentPoints,
   TextInitial,
@@ -29,16 +24,29 @@ import {
 import { AsyncStorage } from "react-native";
 
 const PageTablePoints = ({ navigation }) => {
+  const [points, setPoints] = useState("000");
   const api = axios.create({
     baseURL: "http://10.0.2.2:3000",
   });
 
-  const submit = () => {};
   const Logout = () => {
     return AsyncStorage.setItem("Token", "null").then(() => {
       navigation.navigate("Login");
     });
   };
+  useEffect(() => {
+    AsyncStorage.getItem("Token").then((value) => {
+      api
+        .get("/points", { headers: { authorization: `Bearer ${value}` } })
+        .then((resp) => {
+          // AQUI RETORNA PRO STATE O VALOR
+          setPoints(resp.data.pontos);
+        })
+        .catch((erro) => {
+          console.log(erro);
+        });
+    });
+  }, []);
   return (
     <Container>
       <Header>
@@ -46,6 +54,7 @@ const PageTablePoints = ({ navigation }) => {
           <Text>Sair</Text>
           {<IconLogout fill="#050200" width={26} height={26} />}
         </ContainerIcon>
+
         <ImageContent>
           <ImgLogo source={require("../../assets/Logo.jpeg")} />
         </ImageContent>
@@ -56,7 +65,7 @@ const PageTablePoints = ({ navigation }) => {
 
       <ContentPoints>
         <TextPoints>SEUS PONTOS</TextPoints>
-        <TitlePoints> 100 </TitlePoints>
+        <TitlePoints> {points} </TitlePoints>
       </ContentPoints>
 
       <Content>
